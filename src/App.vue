@@ -58,22 +58,18 @@ export default {
       error: false,
       browsers: [
         {
-          "id": 6,
-          "type": "aliases",
-          "name": "ALXI Ltd"
+          "id": 1,
+          "type": "good",
+          "name": "Chrome"
         }, {
-          "id": 186,
-          "type": "aliases",
-          "name": "ALXI LLC"
+          "id": 2,
+          "type": "good",
+          "name": "Firefox"
         },
         {
           "id": 3,
-          "type": "contacts",
-          "name": "ALXI__"
-        }, {
-          "id": 4,
-          "type": "contacts",
-          "name": "ALXILL"
+          "type": "bad",
+          "name": "Internet Explorer"
         }
       ],
       getBrowsers: function(){

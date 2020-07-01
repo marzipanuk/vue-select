@@ -1,5 +1,5 @@
 # @marizpanuk/vue-select
-*(forked from @desislavsd/vue-select to read array of objects and use key as option header)*
+*(forked from @desislavsd/vue-select to read array of objects and use 'type' key as option header)*
 
 ![Logo](public/vue-select.png)
 
