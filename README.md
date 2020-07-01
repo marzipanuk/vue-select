@@ -1,4 +1,6 @@
-# @desislavsd/vue-select
+# @marizpanuk/vue-select
+*(forked from @desislavsd/vue-select to read array of objects and use key as option header)*
+
 ![Logo](public/vue-select.png)
 
 ![npm (scoped)](https://img.shields.io/npm/v/@desislavsd/vue-select.svg) ![NPM](https://img.shields.io/npm/l/@desislavsd/vue-select.svg) ![npm bundle size (scoped)](https://img.shields.io/bundlephobia/minzip/@desislavsd/vue-select.svg) ![npm](https://img.shields.io/npm/dw/@desislavsd/vue-select.svg) ![npm](https://img.shields.io/npm/dt/@desislavsd/vue-select.svg)
