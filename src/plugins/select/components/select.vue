@@ -52,9 +52,12 @@
             
         <!-- OPTIONS -->
         <template v-slot:options>
-            <Option v-for="(option, i) in filtered" :key="option.index" :ref="'option' + i" v-bind="{ option, state, index: i, select: this }" @mouseup.left.native="select(option)" class="v-select-option">
-                <slot v-for="slot in ['both', 'option']" :name="slot" v-bind="{ option, state, index: i, select: this }" />
-            </Option>
+            <div v-for="item in uniqueItems" :key="item">
+                <h4>{{ item }}</h4>
+                <Option v-for="(option, i) in filteredByType(item)" :key="option.index" :ref="'option' + i" v-bind="{ option, state, index: i, select: this }" @mouseup.left.native="select(option)" class="v-select-option">
+                    <slot v-for="slot in ['both', 'option']" :name="slot" v-bind="{ option, state, index: i, select: this }" />
+                </Option>
+            </div>
         </template>
         
         <template v-for="name in layoutSlots" v-slot:[name]="data">
@@ -205,6 +208,15 @@ export default {
     },
 
     computed: {
+        uniqueItems() {
+            if(this.filtered.length > 0) {
+                let bob = new Set(this.filtered.map(i => i.raw.type))
+                // eslint-disable-next-line
+                console.log(bob)
+                return bob
+            }
+            return null
+        },
         isMultiple(){ 
             return this.multiple != undefined ? this.multiple : Array.isArray(this.value)
         },
@@ -330,7 +342,6 @@ export default {
             return Object.keys(this.$scopedSlots).filter( key => !skip.includes(key) )
         }
     },
-
     watch: {
         value: {
             immediate: true,
@@ -722,6 +733,11 @@ export default {
             if(isset(this.clearOnSelect) ? this.clearOnSelect : 1) this.q = '';
             this.$emit('change', this.isMultiple ? setRaw(this.value_) : this.value_[0] )
         },
+        filteredByType(type) {
+            return this.filtered.filter(function(obj) {
+                return (obj.raw.type === type)
+            });
+        }
     },
 }
 

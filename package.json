@@ -1,5 +1,5 @@
 {
-  "name": "@desislavsd/vue-select",
+  "name": "@marzipanuk/vue-select",
   "description": "Vue select component like Select2 done the Vue way.",
   "keywords": [
     "vue-select",
@@ -25,12 +25,12 @@
   "private": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/desislavsd/vue-select.git"
+    "url": "https://github.com/marzipanuk/vue-select.git"
   },
   "bugs": {
-    "url": "https://github.com/desislavsd/vue-select/issues"
+    "url": "https://github.com/marzipanuk/vue-select/issues"
   },
-  "homepage": "https://desislavsd.gitbook.io/vue-select/",
+  "homepage": "https://github.com/marzipanuk/vue-select",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",

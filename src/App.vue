@@ -14,7 +14,7 @@
         </template>
       </v-select> -->
       <!-- <v-select v-model="item" as="name:id:id" minlength="3" from="https://api.github.com/search/repositories?q=%s" parse="items"/> -->
-      <v-select :value="selectedBrowser" stateful as="name:id:id" :from="getBrowsers">
+      <v-select :value="selectedBrowser" stateful as="name::id" :from="getBrowsers">
         <template v-slot:both="{ option: { label }}">
           <strong>{{label}}</strong>
         </template>
@@ -57,14 +57,28 @@ export default {
       selectedBrowser: undefined,//2,
       error: false,
       browsers: [
-        {"id":1,"name":"Internet Explorer"},
-        {"id":2,"name":"Firefox"},
-        {"id":3,"name":"Chrome"},
-        {"id":4,"name":"Opera"},
-        {"id":5,"name":"Safari"}
+        {
+          "id": 6,
+          "type": "aliases",
+          "name": "ALXI Ltd"
+        }, {
+          "id": 186,
+          "type": "aliases",
+          "name": "ALXI LLC"
+        },
+        {
+          "id": 3,
+          "type": "contacts",
+          "name": "ALXI__"
+        }, {
+          "id": 4,
+          "type": "contacts",
+          "name": "ALXILL"
+        }
       ],
       getBrowsers: function(){
         if(this.error) throw 1
+        // eslint-disable-next-line 
         console.log('got browsers');
         
         return this.browsers
